@@ -13,7 +13,7 @@ export default function App(props) {
   const isLoadingComplete = useCachedResources();
 
   if (!isLoadingComplete) {
-    return null;
+    return null
   } else {
     return (
       <View style={styles.container}>
