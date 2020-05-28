@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import Colors from '../constants/Colors';
+import { FlatList, StyleSheet, View, Text } from 'react-native';
 
 export default class CategoryMenu extends Component {
     render() {

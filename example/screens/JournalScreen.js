@@ -7,9 +7,7 @@ import CategoryMenu from '../components/CategoryMenu';
 
 export default function LinksScreen() {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <CategoryMenu></CategoryMenu>
-    </ScrollView>
+    <CategoryMenu></CategoryMenu>
   );
 }
 
