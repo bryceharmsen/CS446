@@ -3,7 +3,8 @@ import * as React from 'react';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import AgesScreen from '../screens/AgesScreen';
+import JournalScreen from '../screens/JournalScreen';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -20,16 +21,24 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="home" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="Ages"
+        component={AgesScreen}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'Ages',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="baby" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Journal"
+        component={JournalScreen}
+        options={{
+          title: 'Journal',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="notebook" />,
         }}
       />
     </BottomTab.Navigator>
