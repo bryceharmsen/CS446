@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {
     LayoutAnimation,
     TouchableOpacity,
-    ScrollView,
     FlatList,
     StyleSheet,
     View,
-    Text } from 'react-native';
+    Text
+} from 'react-native';
 import fakeDB from '../data/fakeDB.json';
 
 export default class CategoryMenu extends Component {
@@ -16,18 +16,16 @@ export default class CategoryMenu extends Component {
             data: fakeDB.categories
         };
     }
-    updateLayout = item => {
+    updateExpansion = category => {
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-        const array = [...this.state.data];
-        array.map((placeItem, placeIndex) =>
-          placeItem.name === item.name
-            ? (array[placeIndex]['isExpanded'] = !array[placeIndex]['isExpanded'])
-            : (array[placeIndex]['isExpanded'] = false)
+        const categories = [...this.state.data];
+        categories.map(currCategory =>
+          currCategory.name === category.name
+            ? currCategory.isExpanded = !currCategory.isExpanded
+            : currCategory.isExpanded = false
         );
         this.setState(() => {
-            return {
-                data: array,
-            };
+            return { data: categories };
         });
     };
 
@@ -39,8 +37,10 @@ export default class CategoryMenu extends Component {
                     keyExtractor={item => item.name}
                     renderItem={({ item }) => 
                         <ExpandableItemComponent 
-                            item={item}
-                            onClickFunction={this.updateLayout.bind(this, item)}
+                            category={item}
+                            onClickFunction={
+                                this.updateExpansion.bind(this, item)
+                            }
                         />
                     }
                 />
@@ -54,26 +54,26 @@ class ExpandableItemComponent extends Component {
     constructor() {
         super();
         this.state = {
-            layoutHeight: 0,
+            height: 0,
         };
     }
     UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.item.isExpanded) {
+        if (nextProps.category.isExpanded) {
             this.setState(() => {
                 return {
-                    layoutHeight: null,
+                    height: null,
                 };
             });
         } else {
             this.setState(() => {
                 return {
-                    layoutHeight: 0,
+                    height: 0,
                 };
             });
         }
     }
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.state.layoutHeight !== nextState.layoutHeight) {
+        if (this.state.height !== nextState.height) {
             return true;
         }
         return false;
@@ -82,41 +82,34 @@ class ExpandableItemComponent extends Component {
     render() {
         return (
         <View>
-            {/*Header of the Expandable List Item*/}
             <TouchableOpacity
-                activeOpacity={0.8}
+                activeOpacity={0.6}
                 onPress={this.props.onClickFunction}
                 style={styles.categoryItem}>
-            <Text style={styles.categoryText}>{this.props.item.name}</Text>
+                <Text style={styles.categoryText}>{this.props.category.name}</Text>
             </TouchableOpacity>
             <View
                 style={{
-                    height: this.state.layoutHeight,
+                    height: this.state.height,
                     overflow: 'hidden',
                 }}
             >
-            {/*Content under the header of the Expandable List Item*/}
-            {this.props.item.topics.map((item, key) => (
-                <TouchableOpacity
-                    key={key}
-                    style={styles.topicItem}
-                    onPress={() => alert('Put modal pop-up action here')}>
-                    <Text style={styles.topicText}>{item.name}</Text>
-                    <View style={styles.separator} />
-                </TouchableOpacity>
-            ))}
+            <FlatList
+                data={this.props.category.topics}
+                keyExtractor={item => item.name}
+                renderItem={({ item }) =>
+                    <TouchableOpacity
+                        key={item.name}
+                        style={styles.topicItem}
+                        onPress={() => alert('Put modal pop-up action here')}>
+                        <Text style={styles.topicText}>{item.name}</Text>
+                    </TouchableOpacity>
+                }
+            />
             </View>
         </View>
         );
     }
-}
-
-function Item({ text }) {
-    return (
-        <View style={styles.item}>
-            <Text style={styles.text}>{text}</Text>
-        </View>
-    )
 }
 
 const styles = StyleSheet.create({
