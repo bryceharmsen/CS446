@@ -86,8 +86,8 @@ class ExpandableItemComponent extends Component {
             <TouchableOpacity
                 activeOpacity={0.8}
                 onPress={this.props.onClickFunction}
-                style={styles.header}>
-            <Text style={styles.text}>{this.props.item.name}</Text>
+                style={styles.categoryItem}>
+            <Text style={styles.categoryText}>{this.props.item.name}</Text>
             </TouchableOpacity>
             <View
                 style={{
@@ -99,9 +99,9 @@ class ExpandableItemComponent extends Component {
             {this.props.item.topics.map((item, key) => (
                 <TouchableOpacity
                     key={key}
-                    style={styles.content}
+                    style={styles.topicItem}
                     onPress={() => alert('Put modal pop-up action here')}>
-                    <Text style={styles.text}>{item.name}</Text>
+                    <Text style={styles.topicText}>{item.name}</Text>
                     <View style={styles.separator} />
                 </TouchableOpacity>
             ))}
@@ -123,13 +123,23 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     },
-    item: {
+    categoryItem: {
         paddingVertical: 20,
         paddingHorizontal: 30,
         height: 60,
         borderBottomWidth: StyleSheet.hairlineWidth
     },
-    text: {
+    categoryText: {
         fontSize: 18
+    },
+    topicItem: {
+        paddingVertical: 15,
+        paddingHorizontal: 40,
+        height: 50,
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        backgroundColor: "lightgray",
+    },
+    topicText: {
+        fontSize: 16
     }
 });
