@@ -68,7 +68,9 @@ export default class ExpandableItem extends Component {
                       style={styles.topicItem}
                       onPress={this.toggleModal()}>
                       <Text style={styles.topicText}>{item.name}</Text>
-                      <ModalTemplate modalVisible={this.state.modalVisible}></ModalTemplate>
+                      <ModalTemplate modalVisible={this.state.modalVisible}>
+                          <Text>this is a modal</Text>
+                      </ModalTemplate>
                   </TouchableOpacity>
               }
           />

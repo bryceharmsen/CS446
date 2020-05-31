@@ -5,6 +5,7 @@ import { Modal, Text, TextHighlight, TouchableHighlight, View, StyleSheet} from 
 export default class ModalTemplate extends Component {
     constructor() {
         super();
+        this.state = ({modalVisible : false,})
     }
 
     render(){       
