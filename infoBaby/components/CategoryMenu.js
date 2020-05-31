@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 30,
         height: 60,
-        borderBottomWidth: StyleSheet.hairlineWidth
+        borderBottomWidth: 0.5
     },
     categoryText: {
         fontSize: 18
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         paddingHorizontal: 40,
         height: 50,
-        borderBottomWidth: StyleSheet.hairlineWidth,
+        borderBottomWidth: 0.5,
         backgroundColor: "lightgray",
     },
     topicText: {
