@@ -1,52 +1,101 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, StyleSheet, View, Text } from 'react-native';
+import {
+  TouchableOpacity,
+  FlatList,
+  StyleSheet,
+  View,
+  Text
+} from 'react-native';
+import ModalTemplate from './ModalTemplate';
 
 export default class ExpandableItem extends Component {
-    constructor() {
-        super();
-        this.state = {
-            layoutHeight: 0
-        }
-    }
+  constructor() {
+      super();
+      this.state = {
+          height: 0,
+          modalVisible: false
+      };
+  }
 
-    render() {
-        return (
-            <View>
-            {/*Header of the Expandable List Item*/}
-            <TouchableOpacity
-              activeOpacity={0.8}
+  UNSAFE_componentWillReceiveProps(nextProps) {
+      if (nextProps.category.isExpanded) {
+          this.setState(() => {
+              return {
+                  height: null,
+              };
+          });
+      } else {
+          this.setState(() => {
+              return {
+                  height: 0,
+              };
+          });
+      }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+      if (this.state.height !== nextState.height) {
+          return true;
+      }
+      return false;
+  }
+
+  toggleModal() {
+    this.state.modalVisible = !this.state.modalVisible;
+  }
+
+  render() {
+      return (
+      <View>
+          <TouchableOpacity
+              activeOpacity={0.6}
               onPress={this.props.onClickFunction}
-              style={styles.categoryContainer}>
-              <Text style={styles.categoryText}>{this.props.item.category_name}</Text>
-            </TouchableOpacity>
-            <View
+              style={styles.categoryItem}>
+              <Text style={styles.categoryText}>{this.props.category.name}</Text>
+          </TouchableOpacity>
+          <View
               style={{
-                height: this.state.layoutHeight,
-                overflow: 'hidden',
-              }}>
-              {/*Content under the header of the Expandable List Item*/}
-              {this.props.item.subcategory.map((item, key) => (
-                <TouchableOpacity
-                  key={key}
-                  style={styles.content}
-                  onPress={() => alert('Id: ' + item.id + ' val: ' + item.val)}>
-                  <Text style={styles.text}>
-                    {key}. {item.val}
-                  </Text>
-                  <View style={styles.separator} />
-                </TouchableOpacity>
-              ))}
-            </View>
+                  height: this.state.height,
+                  overflow: 'hidden',
+              }}
+          >
+          <FlatList
+              data={this.props.category.topics}
+              keyExtractor={item => item.name}
+              renderItem={({ item }) =>
+                  <TouchableOpacity
+                      key={item.name}
+                      style={styles.topicItem}
+                      onPress={this.toggleModal()}>
+                      <Text style={styles.topicText}>{item.name}</Text>
+                      <ModalTemplate modalVisible={this.state.modalVisible}></ModalTemplate>
+                  </TouchableOpacity>
+              }
+          />
           </View>
-        )
-    }
+      </View>
+      );
+  }
 }
 
 const styles = StyleSheet.create({
-    categoryContainer: {
-
-    },
-    categoryText: {
-
-    }
-})
+  categoryItem: {
+      paddingVertical: 20,
+      paddingHorizontal: 30,
+      height: 60,
+      borderBottomWidth: 0.5
+  },
+  categoryText: {
+      fontSize: 18
+  },
+  topicItem: {
+      paddingVertical: 15,
+      paddingHorizontal: 40,
+      height: 50,
+      borderBottomWidth: 0.5,
+      backgroundColor: "lightgray",
+  },
+  topicText: {
+      fontSize: 16
+  }
+});
