@@ -3,24 +3,48 @@
         {
             "name" : "Food Allergies",
             "topics" : [
-                { "name" : "Strawberries" },
-                { "name" : "Honey" }
+                { 
+                    "name" : "Strawberries",
+                    "body" : "Put strawberries info here."
+                },
+                {
+                    "name" : "Honey",
+                    "body" : "Put honey info here."
+                }
             ]
         },
         {
             "name" : "Motor Development",
             "topics" : [
-                {"name" : "Speech"},
-                {"name" : "Walking & Crawling"},
-                {"name" : "Coordination"}
+                {
+                    "name" : "Speech",
+                    "body" : "Put speech info here."
+                },
+                {
+                    "name" : "Walking & Crawling",
+                    "body" : "Put walking info here."
+                },
+                {
+                    "name" : "Coordination",
+                    "body" : "Put coordination info here."
+                }
             ]
         },
         {
             "name" : "Common Illnesses",
             "topics" : [
-                {"name" : "RSV"},
-                {"name" : "Whooping Cough"},
-                {"name" : "Influenza"}
+                {
+                    "name" : "RSV",
+                    "body" : "Put RSV info here."
+                },
+                {
+                    "name" : "Whooping Cough",
+                    "body" : "Put whooping cough info here."
+                },
+                {
+                    "name" : "Influenza",
+                    "body" : "Put influenza info here."
+                }
             ]
         },
         {
