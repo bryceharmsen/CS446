@@ -4,21 +4,17 @@ import * as WebBrowser from 'expo-web-browser';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { render } from 'react-dom';
+import AgeMenu from "../components/AgeMenu"
 
 export default class AgesScreen extends Component {
 
   render() {
     return(
-      <View>
-        <Text>Hello!</Text>
-        <Button
-          title="Go to Categories"
-          onPress={() => this.props.navigation.navigate('Categories')}
-        />
-      </View>
+      <AgeMenu></AgeMenu>
     )
   }
 }
+
 
 function OptionButton({ icon, label, onPress, isLastOption }) {
   return (

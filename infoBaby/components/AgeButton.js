@@ -1,27 +1,40 @@
 import React, { Component } from 'react';
-import {TouchableOpacity, StyleSheet, View, Text} from 'react-native'
-import fakeDB from '../data/fakeDB.json';
+import {
+    TouchableOpacity,
+    FlatList,
+    StyleSheet, 
+    View, 
+    Text} from 'react-native'
+
 
 export default class AgeButton extends Component {
     constructor() {
         super();
-        this.state = {
-            data: fakeDB.ages
-        };
-
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+    render() {
+        return (
+           <View style = {styles.container}>
+              <TouchableOpacity>
+                 <Text style = {styles.text}>
+                    {this.props.name}
+                 </Text>
+              </TouchableOpacity>
+           </View>
+        )
+     }
+    }
+     
+    
+     const styles = StyleSheet.create ({
+        container: {
+           
+           
+        },
+        text: {
+           borderWidth: 0.5,
+           padding: 25,
+           borderColor: 'black',
+           backgroundColor: 'lightblue'
+        }
+     })
