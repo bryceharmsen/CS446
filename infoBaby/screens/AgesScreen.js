@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { render } from 'react-dom';
 
@@ -11,6 +11,10 @@ export default class AgesScreen extends Component {
     return(
       <View>
         <Text>Hello!</Text>
+        <Button
+          title="Go to Categories"
+          onPress={() => this.props.navigation.navigate('Categories')}
+        />
       </View>
     )
   }
