@@ -5,7 +5,6 @@ import { Modal, Text, TextHighlight, TouchableHighlight, View, StyleSheet} from 
 export default class ModalTemplate extends Component {
     constructor() {
         super();
-        state = {modalVisible: false}    
     }
 
     render(){       
@@ -19,7 +18,7 @@ export default class ModalTemplate extends Component {
                         <Text style = {styles.text}>Modal is open!</Text>
                   
                         <TouchableHighlight onPress = {() => {
-                             this.toggleModal(!this.state.modalVisible)}}>
+                             this.toggleModal(!this.props.modalVisible)}}>
                      
                             <Text style = {styles.text}>Close Modal</Text>
                         </TouchableHighlight>
@@ -28,7 +27,7 @@ export default class ModalTemplate extends Component {
                 </Modal>
 
                 <TouchableHighlight onPress = { () => {
-                    this.toggleModal (!this.state.modalVisible)}}>
+                    this.toggleModal (!this.props.modalVisible)}}>
 
                     <Text style = {styles.text}> Close Modal</Text>    
                 </TouchableHighlight>
@@ -39,7 +38,6 @@ export default class ModalTemplate extends Component {
     }
 
 }
-export default ModalTemplate
 
 const styles = StyleSheet.create ({
     container: {

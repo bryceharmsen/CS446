@@ -6,12 +6,14 @@ import {
   View,
   Text
 } from 'react-native';
+import ModalTemplate from './ModalTemplate';
 
 export default class ExpandableItem extends Component {
   constructor() {
       super();
       this.state = {
           height: 0,
+          modalVisible: false
       };
   }
 
@@ -38,6 +40,10 @@ export default class ExpandableItem extends Component {
       return false;
   }
 
+  toggleModal() {
+    this.state.modalVisible = !this.state.modalVisible;
+  }
+
   render() {
       return (
       <View>
@@ -60,8 +66,9 @@ export default class ExpandableItem extends Component {
                   <TouchableOpacity
                       key={item.name}
                       style={styles.topicItem}
-                      onPress={() => alert('Put modal pop-up action here')}>
+                      onPress={this.toggleModal()}>
                       <Text style={styles.topicText}>{item.name}</Text>
+                      <ModalTemplate modalVisible={this.state.modalVisible}></ModalTemplate>
                   </TouchableOpacity>
               }
           />
