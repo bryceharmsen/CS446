@@ -50,12 +50,28 @@
         {
             "name" : "Products",
             "topics" : [
-                {"name" : "Clothes"},
-                {"name" : "Toys"},
-                {"name" : "Carseats"}
+                {
+                    "name" : "Clothes",
+                    "body" : "Put clothes info here."
+                },
+                {
+                    "name" : "Toys",
+                    "body" : "Put toys info here."
+                },
+                {
+                    "name" : "Carseats",
+                    "body" : "Put car seat info here."
+                }
             ]
         }
     ],
-    "ages" : ["0-6 Months", "7-12 Months", "13-18 Months", "19-24 Months", "25-30 Months", "31-36 Months"]
+    "ages" : [
+        "0-6 Months",
+        "7-12 Months",
+        "13-18 Months",
+        "19-24 Months",
+        "25-30 Months",
+        "31-36 Months"
+    ]
 
 }
