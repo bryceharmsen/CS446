@@ -7,6 +7,7 @@ import {
     Text} from 'react-native'
 import fakeDB from '../data/fakeDB.json';
 import AgeButton from '../components/AgeButton'
+import CategoryMenu from './CategoryMenu';
 
 export default class AgeMenu extends Component {
     constructor() {

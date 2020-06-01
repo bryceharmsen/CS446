@@ -13,6 +13,7 @@ export default class ModalTemplate extends Component {
             <View>
                 <Modal animationType = {"slide"} transparent = {false}
                     visible = {this.state.modalVisible}
+                    presentationStyle = {"overFullScreen"}
                     onRequestClose = { () => { console.log("Modal closed.")}}>
                     
                     <View style = {styles.modal}>
