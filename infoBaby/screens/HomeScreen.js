@@ -1,9 +1,13 @@
 import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-
-import { MonoText } from '../components/StyledText';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import { ScrollView, TextInput } from 'react-native-gesture-handler';
 
 export default function HomeScreen() {
   return (
@@ -19,6 +23,11 @@ export default function HomeScreen() {
         <View style={styles.title}>
           <Text style={styles.titleText}>InfoBaby</Text>
         </View>
+
+        <View style={styles.filler}></View>
+        <TextInput style={styles.searchBar}>
+          <AntDesign name={'search1'} size={15} color="rgba(0,0,0,0.35)" />
+        </TextInput>
       </ScrollView>
 
     </View>
@@ -56,4 +65,15 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 48,
   },
+  filler: {
+    marginBottom: 40
+  },
+  searchBar: {
+    textAlignVertical: 'center',
+    borderWidth: 0.5,
+    marginLeft: 50,
+    marginRight: 50,
+    paddingLeft: 10,
+    borderRadius: 30
+  }
 });
