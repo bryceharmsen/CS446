@@ -15,6 +15,11 @@ export default class CategoryMenu extends Component {
         this.state = {
             data: fakeDB.categories
         };
+        this.createModal();
+    }
+
+    createModal() {
+        <ModalTemplate ></ModalTemplate>
     }
 
     toggleModal = items => {
@@ -40,7 +45,6 @@ export default class CategoryMenu extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ModalTemplate></ModalTemplate>
                     <FlatList 
                         data={this.state.data}
                         keyExtractor={item => item.name}
