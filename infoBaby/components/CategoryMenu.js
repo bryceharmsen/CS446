@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {
     LayoutAnimation,
-    TouchableOpacity,
     FlatList,
     StyleSheet,
     View,
-    Text
 } from 'react-native';
 import ExpandableItem from './ExpandableItem';
 import ModalTemplate from './ModalTemplate';

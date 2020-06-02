@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import JournalMenu from '../components/JournalMenu';
 
 export default class JournalBody extends Component {
     
     render() {
         return (
-        <View>
-            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.container}>
+            <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
                 <JournalMenu></JournalMenu>
             </ScrollView>
             <AddJournalButton
@@ -49,6 +47,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fafafa',
     },
+    scrollContainer: {
+
+    },
     contentContainer: {
         paddingTop: 15,
     },
@@ -70,6 +71,8 @@ const styles = StyleSheet.create({
     },
     addButton: {
         position: 'absolute',
-        bottom: 5
+        margin: 15,
+        bottom: 0,
+        left: 0
     }
 });

@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import {
-    TouchableOpacity,
     FlatList,
-    StyleSheet, 
-    View, 
-    Text} from 'react-native'
+    StyleSheet
+} from 'react-native'
 import fakeDB from '../data/fakeDB.json';
 import AgeButton from '../components/AgeButton'
-import CategoryMenu from './CategoryMenu';
 
 export default class AgeMenu extends Component {
     constructor() {
@@ -15,9 +12,8 @@ export default class AgeMenu extends Component {
         this.state = {
             data: fakeDB.ages
         };
-
-
     }
+
     render() {
         return (
             <FlatList
@@ -29,15 +25,15 @@ export default class AgeMenu extends Component {
         />
         )
      }
+}
+
+
+const styles = StyleSheet.create ({
+    container: {
+        alignItems: 'center',
+    },
+    text: {
+        padding: 25,
+        color: 'black'
     }
-     
-    
-     const styles = StyleSheet.create ({
-        container: {
-           alignItems: 'center',
-        },
-        text: {
-           padding: 25,
-           color: 'black'
-        }
-     })
+});

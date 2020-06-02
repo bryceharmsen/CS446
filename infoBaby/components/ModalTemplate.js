@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Modal, Text, TextHighlight, TouchableOpacity, View, StyleSheet} from 'react-native';
+import {
+    Modal,
+    Text,
+    TouchableOpacity,
+    StyleSheet
+} from 'react-native';
 
 
 export default class ModalTemplate extends Component {

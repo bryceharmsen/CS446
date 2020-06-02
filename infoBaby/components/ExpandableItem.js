@@ -6,7 +6,6 @@ import {
   View,
   Text
 } from 'react-native';
-import ModalTemplate from './ModalTemplate';
 
 export default class ExpandableItem extends Component {
   constructor() {

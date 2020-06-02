@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {
-    TouchableOpacity,
     FlatList,
     StyleSheet, 
-    View, 
-    Text} from 'react-native'
+} from 'react-native';
 import fakeDB from '../data/fakeDB.json';
 import JournalEntry from '../components/JournalEntry';
 
@@ -14,31 +12,34 @@ export default class JournalMenu extends Component {
         this.state = {
             data: fakeDB.journals
         };
-
-
     }
+
+    onPress = data => {
+        console.log("Journal Pressed", data);
+    }
+
     render() {
         return (
             <FlatList
-            data={this.state.data}
-            keyExtractor={item => item.title}
-            renderItem={({ item }) =>
-                <JournalEntry data={item}></JournalEntry>
-            }
-        />
+                data={this.state.data}
+                keyExtractor={item => `${item.id}`}
+                renderItem={({ item, index }) =>
+                    <JournalEntry data={item} onPress={this.onPress.bind(this, item)}></JournalEntry>
+                }
+            />
         )
-     }
     }
+}
      
     
-     const styles = StyleSheet.create ({
-        container: {
-           alignItems: 'center',
-        },
-        text: {
-           borderWidth: 1,
-           padding: 25,
-           borderColor: 'black',
-           backgroundColor: 'black'
-        }
-     })
+const styles = StyleSheet.create ({
+container: {
+    alignItems: 'center',
+},
+text: {
+    borderWidth: 1,
+    padding: 25,
+    borderColor: 'black',
+    backgroundColor: 'black'
+}
+});

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
     TouchableOpacity,
-    FlatList,
     StyleSheet, 
     View, 
-    Text} from 'react-native'
+    Text
+} from 'react-native'
 
 
 export default class JournalEntry extends Component {
@@ -12,27 +12,28 @@ export default class JournalEntry extends Component {
         super();
 
     }
+
     render() {
         return (
            <View style = {styles.container}>
-              <TouchableOpacity activeOpacity={0.6} OnPress={alert('ALERT: ' + this.props.data.entry)}>
+              <TouchableOpacity activeOpacity={0.6} OnPress={this.props.onPress}>
                  <Text style = {styles.text}>
                     {this.props.data.title}
                  </Text>
               </TouchableOpacity>
            </View>
         )
-     }
     }
+}
      
     
-     const styles = StyleSheet.create ({
-        container: {
-           flex: 1
-        },
-        text: {
-           marginBottom: 1,
-           padding: 25,
-           backgroundColor: 'lightgreen'
-        }
-     })
+const styles = StyleSheet.create ({
+    container: {
+        flex: 1
+    },
+    text: {
+        marginBottom: 1,
+        padding: 25,
+        backgroundColor: 'lightgreen'
+    }
+});
