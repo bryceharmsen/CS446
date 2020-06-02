@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, TextHighlight, TouchableHighlight, View, StyleSheet} from 'react-native';
+import { Modal, Text, TextHighlight, TouchableOpacity, View, StyleSheet} from 'react-native';
 
 
 export default class ModalTemplate extends Component {
@@ -8,33 +8,31 @@ export default class ModalTemplate extends Component {
         this.state = ({modalVisible : false,})
     }
 
+    toggleModal() {
+        this.state.modalVisible = false;
+    }
+
     render(){       
         return(
-            <View>
                 <Modal animationType = {"slide"} transparent = {false}
+                    style = {styles.modal}
                     visible = {this.state.modalVisible}
                     presentationStyle = {"overFullScreen"}
                     onRequestClose = { () => { console.log("Modal closed.")}}>
                     
-                    <View style = {styles.modal}>
+                    
                         <Text style = {styles.text}>Modal is open!</Text>
                   
-                        <TouchableHighlight onPress = {() => {
-                             this.toggleModal(!this.props.modalVisible)}}>
+                        
+                        <TouchableOpacity 
+                        onPress = {() => {this.toggleModal()}}
+                        >
                      
                             <Text style = {styles.text}>Close Modal</Text>
-                        </TouchableHighlight>
-                     </View>
+                        </TouchableOpacity>
+                        
 
                 </Modal>
-
-                <TouchableHighlight onPress = { () => {
-                    this.toggleModal (!this.props.modalVisible)}}>
-
-                    <Text style = {styles.text}> Close Modal</Text>    
-                </TouchableHighlight>
-
-            </View>
         ) 
 
     }
@@ -49,8 +47,9 @@ const styles = StyleSheet.create ({
     },
     modal: {
         flex: 1,
+        alignSelf: 'center',
         alignItems: 'center',
-        backgroundColor: '#f7021a',
+        backgroundColor: '#7C7C7C',
         padding: 100
     },
     text: {
