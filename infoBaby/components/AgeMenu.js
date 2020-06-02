@@ -24,7 +24,7 @@ export default class AgeMenu extends Component {
             data={this.state.data}
             keyExtractor={item => item}
             renderItem={({ item }) =>
-                <AgeButton name={item}></AgeButton>
+                <AgeButton name={item} navigation={this.props.navigation}></AgeButton>
             }
         />
         )

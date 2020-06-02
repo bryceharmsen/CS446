@@ -10,7 +10,7 @@ export default class AgesScreen extends Component {
 
   render() {
     return(
-      <AgeMenu></AgeMenu>
+      <AgeMenu navigation={this.props.navigation}></AgeMenu>
     )
   }
 }

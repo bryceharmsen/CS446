@@ -15,7 +15,7 @@ export default class AgeButton extends Component {
     render() {
         return (
            <View style = {styles.container}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('Categories')}>
                  <Text style = {styles.text}>
                     {this.props.name}
                  </Text>
