@@ -1,13 +1,13 @@
-import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import {
   Image,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { ScrollView, TextInput } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeScreen() {
   return (
@@ -23,11 +23,6 @@ export default function HomeScreen() {
         <View style={styles.title}>
           <Text style={styles.titleText}>InfoBaby</Text>
         </View>
-
-        <View style={styles.filler}></View>
-        <TextInput style={styles.searchBar}>
-          <AntDesign name={'search1'} size={15} color="rgba(0,0,0,0.35)" />
-        </TextInput>
       </ScrollView>
 
     </View>
