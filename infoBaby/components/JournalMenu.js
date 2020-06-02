@@ -14,17 +14,15 @@ export default class JournalMenu extends Component {
         };
     }
 
-    onPress = data => {
-        console.log("Journal Pressed", data);
-    }
-
     render() {
         return (
             <FlatList
                 data={this.state.data}
                 keyExtractor={item => `${item.id}`}
                 renderItem={({ item, index }) =>
-                    <JournalEntry data={item} onPress={this.onPress.bind(this, item)}></JournalEntry>
+                    <JournalEntry 
+                        data={item}
+                    />
                 }
             />
         )

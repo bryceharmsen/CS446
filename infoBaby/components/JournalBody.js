@@ -9,9 +9,7 @@ export default class JournalBody extends Component {
     render() {
         return (
         <View style={styles.container}>
-            <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
-                <JournalMenu></JournalMenu>
-            </ScrollView>
+            <JournalMenu></JournalMenu>
             <AddJournalButton
                 style={styles.addButton}
                 icon='pluscircleo'
