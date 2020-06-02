@@ -37,9 +37,7 @@ export default class AgeMenu extends Component {
            alignItems: 'center',
         },
         text: {
-           borderWidth: 1,
            padding: 25,
-           borderColor: 'black',
-           backgroundColor: 'black'
+           color: 'black'
         }
      })

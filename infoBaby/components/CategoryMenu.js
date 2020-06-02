@@ -18,8 +18,12 @@ export default class CategoryMenu extends Component {
             data: fakeDB.categories
         };
     }
-    toggleModal() {
+
+    toggleModal = items => {
         this.state.modalVisible = !this.state.modalVisible;
+        console.log(`toggling visibility to ${this.state.modalVisible}`);
+        console.log('items', items);
+
     }
 
     updateExpansion = category => {
@@ -42,12 +46,14 @@ export default class CategoryMenu extends Component {
                     <FlatList 
                         data={this.state.data}
                         keyExtractor={item => item.name}
-                        renderItem={({ item }) => 
+                        renderItem={({ item, index }) => 
                             <ExpandableItem
                                 category={item}
                                 onClickFunction={
-                                    this.updateExpansion.bind(this, item),
-                                    this.toggleModal()
+                                    this.updateExpansion.bind(this, item)
+                                }
+                                toggleModal={
+                                    this.toggleModal
                                 }
                             />
                         }

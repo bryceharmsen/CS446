@@ -32,7 +32,7 @@ export default class AgeButton extends Component {
            
         },
         text: {
-           borderWidth: 0.5,
+           borderBottomWidth: 0.5,
            padding: 25,
            borderColor: 'black',
            backgroundColor: 'lightblue'

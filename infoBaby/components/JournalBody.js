@@ -10,14 +10,17 @@ export default class JournalBody extends Component {
     
     render() {
         return (
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <JournalMenu></JournalMenu>
+        <View>
+            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+                <JournalMenu></JournalMenu>
+            </ScrollView>
             <AddJournalButton
-            icon='pluscircleo'
-            label='Add Journal'
-            onPress={() => addJournal()}
+                style={styles.addButton}
+                icon='pluscircleo'
+                label='Add Journal'
+                onPress={() => addJournal()}
             />
-        </ScrollView>
+        </View>
         );
   }
 }
@@ -65,4 +68,8 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         marginTop: 1,
     },
+    addButton: {
+        position: 'absolute',
+        bottom: 5
+    }
 });

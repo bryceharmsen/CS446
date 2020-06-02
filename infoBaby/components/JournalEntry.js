@@ -15,7 +15,7 @@ export default class JournalEntry extends Component {
     render() {
         return (
            <View style = {styles.container}>
-              <TouchableOpacity OnPress={() => alert('should pop-up journal entry modal. ' + this.props.data.entry)}>
+              <TouchableOpacity activeOpacity={0.6} OnPress={alert('ALERT: ' + this.props.data.entry)}>
                  <Text style = {styles.text}>
                     {this.props.data.title}
                  </Text>
