@@ -72,6 +72,15 @@
         "19-24 Months",
         "25-30 Months",
         "31-36 Months"
+    ],
+    "journals" : [
+        {
+            "title" : "First Journal",
+            "entry" : "Trying the journal out, woohoo!"
+        },
+        {
+            "title" : "Tracking Food Reactions",
+            "entry" : "5/10 Broke out after PB"
+        }
     ]
-
 }

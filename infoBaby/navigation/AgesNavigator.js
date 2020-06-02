@@ -10,10 +10,10 @@ export default function Ages({ navigation }) {
     return (
         <Stack.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
             <Stack.Screen
-                name='Ages'
+                name='Main'
                 component={AgesScreen}
                 options={{
-                    title: 'Ages'
+                    title: 'Main'
                 }}
             />
             <Stack.Screen
