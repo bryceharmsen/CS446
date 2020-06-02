@@ -23,10 +23,22 @@ export default function HomeScreen() {
         <View style={styles.title}>
           <Text style={styles.titleText}>InfoBaby</Text>
         </View>
+
       </ScrollView>
 
     </View>
   );
+}
+
+function searchBar() {
+  return (
+    <View>
+      <View style={styles.filler}></View>
+      <TextInput style={styles.searchBar}>
+        <AntDesign name={'search1'} size={15} color="rgba(0,0,0,0.35)" />
+      </TextInput>
+    </View>
+  )
 }
 
 HomeScreen.navigationOptions = {
