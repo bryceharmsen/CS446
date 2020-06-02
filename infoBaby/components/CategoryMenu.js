@@ -38,7 +38,7 @@ export default class CategoryMenu extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ModalTemplate>
+                <ModalTemplate></ModalTemplate>
                     <FlatList 
                         data={this.state.data}
                         keyExtractor={item => item.name}
@@ -52,7 +52,7 @@ export default class CategoryMenu extends Component {
                             />
                         }
                     />
-                </ModalTemplate>
+                
             </View>
         )
     }
