@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {
     LayoutAnimation,
+    Button,
     FlatList,
     StyleSheet,
+    SafeAreaView,
     View,
 } from 'react-native';
 import ExpandableItem from './ExpandableItem';
@@ -13,20 +15,16 @@ export default class CategoryMenu extends Component {
     constructor() {
         super();
         this.state = {
-            data: fakeDB.categories
+            data: fakeDB.categories,
+            isVisible: false
         };
-        this.createModal();
+        //this.createModal();
     }
 
-    createModal() {
-        <ModalTemplate ></ModalTemplate>
-    }
 
-    toggleModal = items => {
-        this.state.modalVisible = !this.state.modalVisible;
-        console.log(`toggling visibility to ${this.state.modalVisible}`);
-        console.log('items', items);
-
+    toggleModal = () => {
+        console.log('hhaha')
+        this.setState({isVisible: !this.state.isVisible})
     }
 
     updateExpansion = category => {
@@ -42,9 +40,21 @@ export default class CategoryMenu extends Component {
         });
     };
 
+    //temporary "show modal" button to test modal pop-up
     render() {
         return (
             <View style={styles.container}>
+                <SafeAreaView>
+                <ModalTemplate  
+                    toggleModal = {this.toggleModal}
+                    isVisible = {this.state.isVisible}
+                    title = {'Hello there'} 
+                    info = {'This is the information'}
+                    >
+
+                </ModalTemplate>
+                </SafeAreaView>
+                <Button title = "show modal" onPress={ () => {this.toggleModal()}}/>
                     <FlatList 
                         data={this.state.data}
                         keyExtractor={item => item.name}
@@ -54,9 +64,12 @@ export default class CategoryMenu extends Component {
                                 onClickFunction={
                                     this.updateExpansion.bind(this, item)
                                 }
-                                toggleModal={
-                                    this.toggleModal
+                                toggleModal = {
+                                    this.toggleModal.bind(this, item)
                                 }
+
+                                
+                               
                             />
                         }
                     />

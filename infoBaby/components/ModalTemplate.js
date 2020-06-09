@@ -1,48 +1,53 @@
 import React, { Component } from 'react';
 import {
     Modal,
+    Button,
     Text,
+    View,
     TouchableOpacity,
     StyleSheet
 } from 'react-native';
 
 
 export default class ModalTemplate extends Component {
-    constructor() {
-        super();
-        this.state = ({modalVisible : false,})
+    constructor(props) {
+        super(props);  
     }
 
-    toggleModal() {
-        this.state.modalVisible = false;
-    }
 
-    render(){       
+    render(){ 
+        console.log('rendering template');   
+        console.log(this.props.isVisible);   
         return(
-                <Modal animationType = {"slide"} transparent = {false}
-                    style = {styles.modal}
-                    visible = {this.state.modalVisible}
-                    presentationStyle = {"overFullScreen"}
-                    onRequestClose = { () => { console.log("Modal closed.")}}>
+            <View >
+                <Modal animationType = {"slide"} transparent = {true}
+                    visible = {this.props.isVisible}
+                    onBackdropPress = {this.props.toggleModal}
+                    onRequestClose = { this.props.toggleModal}>
                     
+                    <View style = {styles.modal}>
+                        <View style = {{backgrounColor: "#ffffff", margin: 50, 
+                            padding: 40, borderRadius: 10, flex: 1}}>
                     
-                        <Text style = {styles.text}>Modal is open!</Text>
+                        <Text style = {styles.titleText}>{this.props.title} </Text>
+
+                        <Text style = {styles.text}> {this.props.info} </Text>
                   
                         
-                        <TouchableOpacity 
-                        onPress = {() => {this.toggleModal()}}
-                        >
-                     
-                            <Text style = {styles.text}>Close Modal</Text>
-                        </TouchableOpacity>
-                        
-
+                        <Button title= "close" onPress = {()=> this.props.toggleModal()}/>
+                    
+                        </View>
+                    </View>
+                    
                 </Modal>
+
+            </View>
         ) 
 
     }
 
 }
+
 
 const styles = StyleSheet.create ({
     container: {
@@ -54,11 +59,19 @@ const styles = StyleSheet.create ({
         flex: 1,
         alignSelf: 'center',
         alignItems: 'center',
-        backgroundColor: '#7C7C7C',
+        backgroundColor: '##000000',
+        marginTop: 100,
         padding: 100
     },
     text: {
         color: '#3f2949',
-        marginTop: 10
+        fontSize: 13,
+        marginTop: 20,
+        alignItems: 'center'
+    }, 
+    titleText: {
+        color: '#000255',
+        fontSize: 28,
+        alignItems: 'left'
     }
 })
