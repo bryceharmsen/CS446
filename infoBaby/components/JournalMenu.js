@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import fakeDB from '../data/fakeDB.json';
 import JournalEntry from '../components/JournalEntry';
-import ModalTemplate from './ModalTemplate';
+import InputModal from './InputModal';
 
 export default class JournalMenu extends Component {
     constructor() {
@@ -25,7 +25,7 @@ export default class JournalMenu extends Component {
     render() {
         return (
             <View>
-                <ModalTemplate
+                <InputModal
                     isVisible={this.state.isVisible}
                     toggleModal={this.toggleModal}
                     title={this.state.modalContent && this.state.modalContent.title}
