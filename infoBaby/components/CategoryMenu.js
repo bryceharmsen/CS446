@@ -16,13 +16,17 @@ export default class CategoryMenu extends Component {
         super();
         this.state = {
             data: fakeDB.categories,
-            isVisible: false
+            isVisible: false,
+            modalContent: '',
+            modalTitle: ''
         };
     }
 
 
-    toggleModal = () => {
+    toggleModal = (content) => {
+        console.log(content)
         this.setState({isVisible: !this.state.isVisible})
+        if (content) this.setState({modalContent: content.body, modalTitle: content.name})  
     }
 
     updateExpansion = category => {
@@ -46,8 +50,8 @@ export default class CategoryMenu extends Component {
                     <ModalTemplate  
                         toggleModal = {this.toggleModal}
                         isVisible = {this.state.isVisible}
-                        title = {'Hello there'} 
-                        info = {'This is the information'}
+                        title = {this.state.modalTitle} 
+                        info = {this.state.modalContent}
                         >
 
                     </ModalTemplate>
@@ -62,7 +66,7 @@ export default class CategoryMenu extends Component {
                                     this.updateExpansion.bind(this, item)
                                 }
                                 toggleModal = {
-                                    this.toggleModal.bind(this, item)
+                                    this.toggleModal
                                 }
 
                                 
