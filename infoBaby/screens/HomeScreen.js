@@ -30,7 +30,7 @@ export default function HomeScreen() {
   );
 }
 
-function searchBar() {
+function SearchBar() {
   return (
     <View>
       <View style={styles.filler}></View>

@@ -15,6 +15,4 @@ export default class AgesScreen extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  
-});
+

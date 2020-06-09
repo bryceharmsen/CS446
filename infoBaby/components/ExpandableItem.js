@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
       paddingVertical: 20,
       paddingHorizontal: 30,
       height: 60,
-      borderBottomWidth: 0.5
+      marginBottom: 0.5,
+      backgroundColor: 'orange'
   },
   categoryText: {
       fontSize: 18
@@ -86,8 +87,8 @@ const styles = StyleSheet.create({
       paddingVertical: 15,
       paddingHorizontal: 40,
       height: 50,
-      borderBottomWidth: 0.5,
-      backgroundColor: "lightgray",
+      marginBottom: 0.5,
+      backgroundColor: "#cecece"
   },
   topicText: {
       fontSize: 16

@@ -28,16 +28,3 @@ export default class JournalMenu extends Component {
         )
     }
 }
-     
-    
-const styles = StyleSheet.create ({
-container: {
-    alignItems: 'center',
-},
-text: {
-    borderWidth: 1,
-    padding: 25,
-    borderColor: 'black',
-    backgroundColor: 'black'
-}
-});

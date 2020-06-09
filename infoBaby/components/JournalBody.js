@@ -12,7 +12,7 @@ export default class JournalBody extends Component {
             <JournalMenu></JournalMenu>
             <AddJournalButton
                 style={styles.addButton}
-                icon='pluscircleo'
+                icon='pluscircle'
                 label='Add Journal'
                 onPress={() => addJournal()}
             />
@@ -21,15 +21,15 @@ export default class JournalBody extends Component {
   }
 }
 
-function AddJournalButton({ icon, label, onPress, isLastOption }) {
+function AddJournalButton({ icon, label, onPress }) {
     return (
-      <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
+      <RectButton style={styles.jButton} onPress={onPress}>
         <View style={{ flexDirection: 'row' }}>
-          <View style={styles.optionIconContainer}>
-            <AntDesign name={icon} size={22} color="rgba(0,0,0,0.35)" />
+          <View style={styles.jButtonIconContainer}>
+            <AntDesign name={icon} size={22} color="rgba(0,0,0,1)" />
           </View>
-          <View style={styles.optionTextContainer}>
-            <Text style={styles.optionText}>{label}</Text>
+          <View style={styles.jButtonTextContainer}>
+            <Text style={styles.jButtonText}>{label}</Text>
           </View>
         </View>
       </RectButton>
@@ -45,31 +45,28 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fafafa',
     },
-    scrollContainer: {
-
-    },
     contentContainer: {
         paddingTop: 15,
     },
-    optionIconContainer: {
+    jButtonIconContainer: {
         marginRight: 12,
     },
-    option: {
-        backgroundColor: '#fdfdfd',
+    jButton: {
+        backgroundColor: 'grey',
         paddingHorizontal: 15,
         paddingVertical: 15,
         marginTop: 1,
         marginBottom: 1,
         borderColor: '#ededed',
     },
-    optionText: {
+    jButtonText: {
         fontSize: 15,
+        color: 'white',
         alignSelf: 'flex-start',
         marginTop: 1,
     },
     addButton: {
         position: 'absolute',
-        margin: 15,
         bottom: 0,
         left: 0
     }
