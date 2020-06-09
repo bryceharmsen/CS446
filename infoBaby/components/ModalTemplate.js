@@ -16,10 +16,8 @@ export default class ModalTemplate extends Component {
 
 
     render(){ 
-        console.log('rendering template');   
-        console.log(this.props.isVisible);   
         return(
-            <View >
+            <View style={styles.container}>
                 <Modal animationType = {"slide"} transparent = {true}
                     visible = {this.props.isVisible}
                     onBackdropPress = {this.props.toggleModal}
@@ -32,7 +30,7 @@ export default class ModalTemplate extends Component {
                         <Text style = {styles.text}> {this.props.info} </Text>
                   
                         
-                        <Button title= "close" onPress = {()=> this.props.toggleModal()}/>
+                        <Button style={styles.closeButton} title= "close" onPress = {()=> this.props.toggleModal()}/>
                      
                     </View>
                     
@@ -49,27 +47,33 @@ export default class ModalTemplate extends Component {
 const styles = StyleSheet.create ({
     container: {
         alignItems: 'center',
-        backgroundColor: '#ede3f2',
         padding: 10
     },
     modal: {
+        alignSelf: 'center',
         backgroundColor: "#ffffff",
-        margin: 10, 
+        marginTop: 70,
+        marginBottom: 70,
         padding: 10,
         borderRadius: 10,
         flex: 1,
-        width: "80%",
-        alignItems: 'center'
+        width: '90%',
+        alignItems: 'center',
+        borderWidth: 1
     },
     text: {
         color: '#3f2949',
-        fontSize: 13,
+        fontSize: 16,
         marginTop: 20,
-        alignItems: 'center'
+        alignItems: 'center',
+        alignSelf: 'flex-start'
     }, 
     titleText: {
         color: '#000255',
-        fontSize: 28,
+        fontSize: 24,
         alignItems: 'flex-start'
+    },
+    closeButton: {
+
     }
 })

@@ -7,9 +7,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import JournalBody from '../components/JournalBody';
 export default class JournalsScreen extends Component {
+
   render() {
     return (
       <JournalBody></JournalBody>
     );
   }
+  
 }

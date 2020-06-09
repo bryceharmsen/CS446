@@ -18,12 +18,10 @@ export default class CategoryMenu extends Component {
             data: fakeDB.categories,
             isVisible: false
         };
-        //this.createModal();
     }
 
 
     toggleModal = () => {
-        console.log('hhaha')
         this.setState({isVisible: !this.state.isVisible})
     }
 
@@ -45,16 +43,15 @@ export default class CategoryMenu extends Component {
         return (
             <View style={styles.container}>
                 <SafeAreaView>
-                <ModalTemplate  
-                    toggleModal = {this.toggleModal}
-                    isVisible = {this.state.isVisible}
-                    title = {'Hello there'} 
-                    info = {'This is the information'}
-                    >
+                    <ModalTemplate  
+                        toggleModal = {this.toggleModal}
+                        isVisible = {this.state.isVisible}
+                        title = {'Hello there'} 
+                        info = {'This is the information'}
+                        >
 
-                </ModalTemplate>
+                    </ModalTemplate>
                 </SafeAreaView>
-                <Button title = "show modal" onPress={ () => {this.toggleModal()}}/>
                     <FlatList 
                         data={this.state.data}
                         keyExtractor={item => item.name}
