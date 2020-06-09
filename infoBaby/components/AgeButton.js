@@ -15,8 +15,8 @@ export default class AgeButton extends Component {
    render() {
       return (
          <View style = {styles.container}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Categories')}>
-               <Text style = {styles.text}>
+            <TouchableOpacity style={styles.ageItem} onPress={() => this.props.navigation.navigate('Categories')}>
+               <Text style = {styles.ageText}>
                   {this.props.name}
                </Text>
             </TouchableOpacity>
@@ -30,11 +30,14 @@ const styles = StyleSheet.create ({
    container: {
       flex: 1
    },
-   text: {
-      borderBottomWidth: 0.5,
-      padding: 25,
-      borderColor: 'black',
+   ageItem : {
+      paddingVertical: 20,
+      paddingHorizontal: 30,
+      height: 60,
+      marginBottom: 0.5,
       backgroundColor: 'lightblue',
-      marginBottom: 1
+   },
+   ageText: {
+      fontSize: 18,
    }
 });

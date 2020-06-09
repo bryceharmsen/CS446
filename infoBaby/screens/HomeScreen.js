@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
 }
 }
 
-function searchBar() {
+function SearchBar() {
   return (
     <View>
       <View style={styles.filler}></View>
