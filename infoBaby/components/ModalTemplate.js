@@ -26,8 +26,6 @@ export default class ModalTemplate extends Component {
                     onRequestClose = {this.props.toggleModal}>
                     
                     <View style = {styles.modal}>
-                        <View style = {{backgrounColor: "#ffffff", margin: 50, 
-                            padding: 40, borderRadius: 10, flex: 1}}>
                     
                         <Text style = {styles.titleText}>{this.props.title} </Text>
 
@@ -35,8 +33,7 @@ export default class ModalTemplate extends Component {
                   
                         
                         <Button title= "close" onPress = {()=> this.props.toggleModal()}/>
-                    
-                        </View>
+                     
                     </View>
                     
                 </Modal>
@@ -53,15 +50,16 @@ const styles = StyleSheet.create ({
     container: {
         alignItems: 'center',
         backgroundColor: '#ede3f2',
-        padding: 100
+        padding: 10
     },
     modal: {
+        backgroundColor: "#ffffff",
+        margin: 10, 
+        padding: 10,
+        borderRadius: 10,
         flex: 1,
-        alignSelf: 'center',
-        alignItems: 'center',
-        backgroundColor: '#000000',
-        marginTop: 100,
-        padding: 100
+        width: "80%",
+        alignItems: 'center'
     },
     text: {
         color: '#3f2949',
