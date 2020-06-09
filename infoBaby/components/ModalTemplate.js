@@ -23,7 +23,7 @@ export default class ModalTemplate extends Component {
                 <Modal animationType = {"slide"} transparent = {true}
                     visible = {this.props.isVisible}
                     onBackdropPress = {this.props.toggleModal}
-                    onRequestClose = { this.props.toggleModal}>
+                    onRequestClose = {this.props.toggleModal}>
                     
                     <View style = {styles.modal}>
                         <View style = {{backgrounColor: "#ffffff", margin: 50, 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create ({
         flex: 1,
         alignSelf: 'center',
         alignItems: 'center',
-        backgroundColor: '##000000',
+        backgroundColor: '#000000',
         marginTop: 100,
         padding: 100
     },
@@ -72,6 +72,6 @@ const styles = StyleSheet.create ({
     titleText: {
         color: '#000255',
         fontSize: 28,
-        alignItems: 'left'
+        alignItems: 'flex-start'
     }
 })

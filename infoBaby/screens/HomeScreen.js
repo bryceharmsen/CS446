@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   StyleSheet,
@@ -7,27 +7,29 @@ import {
   TextInput
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { ScrollView } from 'react-native-gesture-handler';
+import RandomNumber from '../components/RandomNumber';
 
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={require('../assets/images/infobaby-icon.png')}
-            style={styles.welcomeImage}
-          />
-        </View>
+export default class HomeScreen extends Component {
+  render(){
+    return(
+      <View style={styles.container}>
+  
+          <View style={styles.welcomeContainer}>
+            <Image
+              source={require('../assets/images/infobaby-icon.png')}
+              style={styles.welcomeImage}
+            />
+          </View>
 
-        <View style={styles.title}>
-          <Text style={styles.titleText}>InfoBaby</Text>
-        </View>
+          <View style={styles.title}>
+            <Text style={styles.titleText}>InfoBaby</Text>
+          </View>
 
-      </ScrollView>
-
-    </View>
-  );
+        
+        <RandomNumber></RandomNumber>
+      </View>
+    );
+}
 }
 
 function searchBar() {
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 40,
     marginBottom: 20,
   },
   welcomeImage: {
@@ -67,6 +69,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop: 15,
+    marginBottom: 30,
     alignItems: 'center',
   },
   titleText: {

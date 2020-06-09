@@ -144,5 +144,37 @@
             "title" : "Tracking Food Reactions",
             "entry" : "5/10 Broke out after PB"
         }
+    ],
+    "Tips": [
+        {
+            "info" : "Here's the first neat tip"
+        },
+        {
+            "info" : "Here's the second neat tip"
+        },
+        {
+            "info" : "Here's the third neat tip"
+        },
+        {
+            "info" : "Here's the fourth neat tip"
+        },
+        {
+            "info" : "Here's the fifth neat tip"
+        },
+        {
+            "info" : "Here's the sixth neat tip"
+        },
+        {
+            "info" : "Here's the seventh neat tip"
+        },
+        {
+            "info" : "Here's the eighth neat tip"
+        },
+        {
+            "info" : "Here's the ninth neat tip"
+        },
+        {
+            "info" : "Here's the tenth neat tip"
+        }
     ]
 }
