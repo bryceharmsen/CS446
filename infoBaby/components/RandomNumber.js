@@ -12,9 +12,8 @@ export default class RandomNumber extends Component{
         super();
         
         this.state={
-
-            data: fakeDB.Tips, currentID: 0
-
+            data: fakeDB.Tips,
+            currentID: 0
         };
     }
 
@@ -23,19 +22,14 @@ export default class RandomNumber extends Component{
         let RandomNumber = Math.floor(Math.random() * this.state.data.length);
         this.setState({ currentID : RandomNumber })
     }
-    //This comes up as red when I don't put the ; after render
+
     render() {
 
         return (
-
             <View style ={styles.MainContainer}>
-
-            <Text style={styles.text}>{this.state.data[this.state.currentID].info}</Text>
-
-            <Button title="Pro tip" onPress={this.generateRandomNumber} />
-
+                <Text style={styles.text}>{this.state.data[this.state.currentID].info}</Text>
+                <Button title="Pro tip" onPress={this.generateRandomNumber} />
             </View>
-
         );
     }
 }
@@ -47,6 +41,5 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         textAlign: 'center'
-    }
-    
+    } 
 });
