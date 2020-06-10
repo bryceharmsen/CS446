@@ -46,6 +46,24 @@ export default class CategoryMenu extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <FlatList 
+                    data={this.state.data}
+                    keyExtractor={item => item.name}
+                    renderItem={({ item }) => 
+                        <ExpandableItem
+                            category={item}
+                            onClickFunction={
+                                this.updateExpansion.bind(this, item)
+                            }
+                            toggleModal = {
+                                this.toggleModal
+                            }
+
+                            
+                            
+                        />
+                    }
+                />
                 <SafeAreaView>
                     <ModalTemplate  
                         toggleModal = {this.toggleModal}
@@ -56,25 +74,6 @@ export default class CategoryMenu extends Component {
 
                     </ModalTemplate>
                 </SafeAreaView>
-                    <FlatList 
-                        data={this.state.data}
-                        keyExtractor={item => item.name}
-                        renderItem={({ item, index }) => 
-                            <ExpandableItem
-                                category={item}
-                                onClickFunction={
-                                    this.updateExpansion.bind(this, item)
-                                }
-                                toggleModal = {
-                                    this.toggleModal
-                                }
-
-                                
-                               
-                            />
-                        }
-                    />
-                
             </View>
         )
     }

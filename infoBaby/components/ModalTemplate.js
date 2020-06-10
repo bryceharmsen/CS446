@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     StyleSheet
 } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 
 export default class ModalTemplate extends Component {
@@ -20,20 +21,18 @@ export default class ModalTemplate extends Component {
             <View style={styles.container}>
                 <Modal animationType = {"slide"} transparent = {true}
                     visible = {this.props.isVisible}
-                    onBackdropPress = {this.props.toggleModal}
+                    onBackdropPress = {() => this.props.toggleModal()}
                     onRequestClose = {this.props.toggleModal}>
                     
                     <View style = {styles.modal}>
-                    
+                        <TouchableOpacity style={styles.closeButton} onPress = {()=> this.props.toggleModal()}>
+                            <AntDesign name={'close'} size={22} color="rgba(0,0,0,1)" /> 
+                        </TouchableOpacity>
+
                         <Text style = {styles.titleText}>{this.props.title} </Text>
 
-                        <Text style = {styles.text}> {this.props.info} </Text>
-                  
-                        
-                        <Button style={styles.closeButton} title= "close" onPress = {()=> this.props.toggleModal()}/>
-                     
-                    </View>
-                    
+                        <Text style = {styles.text}> {this.props.info} </Text>           
+                    </View> 
                 </Modal>
 
             </View>
@@ -71,9 +70,12 @@ const styles = StyleSheet.create ({
     titleText: {
         color: '#000255',
         fontSize: 24,
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        marginTop: 20
     },
     closeButton: {
-
+        position: 'absolute',
+        top: '3%',
+        right: '3%'
     }
 })

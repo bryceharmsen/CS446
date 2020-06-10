@@ -8,6 +8,7 @@ import {
     StyleSheet,
     TextInput
 } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 
 export default class InputModal extends Component {
@@ -34,7 +35,10 @@ export default class InputModal extends Component {
                 >
                     
                     <View style = {styles.modal}>
-                    
+                        <TouchableOpacity style={styles.closeButton} onPress = {()=> this.props.toggleModal()}>
+                            <AntDesign name={'close'} size={22} color="rgba(0,0,0,1)" /> 
+                        </TouchableOpacity>
+
                         <Text style = {styles.titleText}>{this.props.title} </Text>
 
                         <TextInput
@@ -43,10 +47,7 @@ export default class InputModal extends Component {
                             value={this.state.text}
                             onChangeText={text => this.setState({text})}
                             multiline={true}
-                        />            
-                        
-                        <Button style={styles.closeButton} title= "close" onPress = {()=> this.props.toggleModal()}/>
-                     
+                        />                     
                     </View>
                     
                 </Modal>
@@ -86,9 +87,12 @@ const styles = StyleSheet.create ({
     titleText: {
         color: '#000255',
         fontSize: 24,
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        marginTop: 20
     },
     closeButton: {
-
+        position: 'absolute',
+        top: '3%',
+        right: '3%'
     }
 })
