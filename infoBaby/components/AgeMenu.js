@@ -17,12 +17,12 @@ export default class AgeMenu extends Component {
     render() {
         return (
             <FlatList
-            data={this.state.data}
-            keyExtractor={item => item}
-            renderItem={({ item }) =>
-                <AgeButton name={item} navigation={this.props.navigation}></AgeButton>
-            }
-        />
+                data={this.state.data}
+                keyExtractor={item => item}
+                renderItem={({ item }) =>
+                    <AgeButton name={item} navigation={this.props.navigation}></AgeButton>
+                }
+            />
         )
      }
 }

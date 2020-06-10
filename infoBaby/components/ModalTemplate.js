@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
     Modal,
-    Button,
     Text,
     View,
     TouchableOpacity,
@@ -25,7 +24,10 @@ export default class ModalTemplate extends Component {
                     onRequestClose = {() => this.props.toggleModal()}>
                     
                     <View style = {styles.modal}>
-                        <TouchableOpacity style={styles.closeButton} onPress = {()=> this.props.toggleModal()}>
+                        <TouchableOpacity
+                            style={styles.closeButton}
+                            onPress = {()=> this.props.toggleModal()}
+                        >
                             <AntDesign name={'close'} size={22} color="rgba(0,0,0,1)" /> 
                         </TouchableOpacity>
 

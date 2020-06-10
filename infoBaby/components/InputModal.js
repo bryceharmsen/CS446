@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
     Modal,
-    Button,
     Text,
     View,
     TouchableOpacity,
@@ -43,7 +42,6 @@ export default class InputModal extends Component {
 
                         <TextInput
                             ref={input => { this.textInput = input; }}
-                            style={{}}
                             value={this.state.text}
                             onChangeText={text => this.setState({text})}
                             multiline={true}

@@ -18,17 +18,9 @@ export default class ExpandableItem extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
       if (nextProps.category.isExpanded) {
-          this.setState(() => {
-              return {
-                  height: null,
-              };
-          });
+          this.setState({ height: null });
       } else {
-          this.setState(() => {
-              return {
-                  height: 0,
-              };
-          });
+          this.setState({ height: 0 });
       }
   }
 

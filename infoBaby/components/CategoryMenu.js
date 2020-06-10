@@ -58,9 +58,6 @@ export default class CategoryMenu extends Component {
                             toggleModal = {
                                 this.toggleModal
                             }
-
-                            
-                            
                         />
                     }
                 />
@@ -70,9 +67,7 @@ export default class CategoryMenu extends Component {
                         isVisible = {this.state.isVisible}
                         title = {this.state.modalTitle} 
                         info = {this.state.modalContent}
-                        >
-
-                    </ModalTemplate>
+                    />
                 </SafeAreaView>
             </View>
         )
