@@ -29,9 +29,9 @@ export default class InputModal extends Component {
             <View style={styles.container}>
                 <Modal animationType = {"slide"} transparent = {true}
                     visible = {this.props.isVisible}
-                    onBackdropPress = {this.props.toggleModal}
-                    onRequestClose = {this.props.toggleModal}
-                    onShow={() => { this.textInput.focus(); }}
+                    onBackdropPress = {() => this.props.toggleModal()}
+                    onRequestClose = {() => this.props.toggleModal()}
+                    onShow = {() => { this.textInput.focus(); }}
                 >
                     
                     <View style = {styles.modal}>

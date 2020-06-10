@@ -22,7 +22,7 @@ export default class ModalTemplate extends Component {
                 <Modal animationType = {"slide"} transparent = {true}
                     visible = {this.props.isVisible}
                     onBackdropPress = {() => this.props.toggleModal()}
-                    onRequestClose = {this.props.toggleModal}>
+                    onRequestClose = {() => this.props.toggleModal()}>
                     
                     <View style = {styles.modal}>
                         <TouchableOpacity style={styles.closeButton} onPress = {()=> this.props.toggleModal()}>

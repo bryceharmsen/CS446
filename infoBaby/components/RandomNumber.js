@@ -19,17 +19,10 @@ export default class RandomNumber extends Component{
     }
 
 
-GenerateRandomNumber=()=>{
-
-let RandomNumber = Math.floor(Math.random() * this.state.data.length);
-
-this.setState({
-
-    currentID : RandomNumber
-
-})
-
-}
+    generateRandomNumber = () => {
+        let RandomNumber = Math.floor(Math.random() * this.state.data.length);
+        this.setState({ currentID : RandomNumber })
+    }
     //This comes up as red when I don't put the ; after render
     render() {
 
@@ -39,7 +32,7 @@ this.setState({
 
             <Text style={styles.text}>{this.state.data[this.state.currentID].info}</Text>
 
-            <Button title="Pro tip" onPress={this.GenerateRandomNumber} />
+            <Button title="Pro tip" onPress={this.generateRandomNumber} />
 
             </View>
 
@@ -52,7 +45,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     text: {
-        fontSize: 20 
+        fontSize: 20,
+        textAlign: 'center'
     }
     
 });
