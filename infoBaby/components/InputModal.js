@@ -18,7 +18,7 @@ export default class InputModal extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.info !== this.props.info)
             this.setState({text: nextProps.info})
     }
@@ -29,16 +29,20 @@ export default class InputModal extends Component {
                 <Modal animationType = {"slide"} transparent = {true}
                     visible = {this.props.isVisible}
                     onBackdropPress = {this.props.toggleModal}
-                    onRequestClose = {this.props.toggleModal}>
+                    onRequestClose = {this.props.toggleModal}
+                    onShow={() => { this.textInput.focus(); }}
+                >
                     
                     <View style = {styles.modal}>
                     
                         <Text style = {styles.titleText}>{this.props.title} </Text>
 
                         <TextInput
+                            ref={input => { this.textInput = input; }}
                             style={{}}
                             value={this.state.text}
                             onChangeText={text => this.setState({text})}
+                            multiline={true}
                         />            
                         
                         <Button style={styles.closeButton} title= "close" onPress = {()=> this.props.toggleModal()}/>
