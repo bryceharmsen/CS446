@@ -19,8 +19,10 @@ export default class RandomNumber extends Component{
 
 
     generateRandomNumber = () => {
-        let RandomNumber = Math.floor(Math.random() * this.state.data.length);
-        this.setState({ currentID : RandomNumber })
+        let randomNumber = this.state.currentID;
+        while (this.state.currentID == randomNumber)
+            randomNumber = Math.floor(Math.random() * this.state.data.length);
+        this.setState({ currentID : randomNumber })
     }
 
     render() {
