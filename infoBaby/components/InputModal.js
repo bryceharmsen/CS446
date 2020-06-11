@@ -87,7 +87,8 @@ const styles = StyleSheet.create ({
         alignItems: 'flex-start',
         marginTop: 12,
         marginBottom: 12,
-        paddingRight: 40,
+        paddingRight: 36,
+        paddingLeft: 36,
         flexWrap: 'wrap'
     },
     closeButton: {
