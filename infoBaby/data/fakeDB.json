@@ -5,11 +5,11 @@
             "topics" : [
                 { 
                     "name" : "Strawberries",
-                    "body" : "Put strawberries info here."
+                    "body" : "Strawberries aren't especially allergic foods, but as a fruit product they can contain unhealthy amounts of pesticides.\nThey're also considerably acidic, so they may cause skin irritants.\nSource:\nhttps://www.healthline.com/health/parenting/can-babies-eat-strawberries#Introducing-Strawberries"
                 },
                 {
                     "name" : "Honey",
-                    "body" : "Put honey info here."
+                    "body" : "Honey should not be fed to children under 12 months of age.\nIt contains small amounts of bacteria that can cause infant botulism.\nIf you've fed your child honey and you start to see symptoms of any kind developing, make an appointment with your doctor as soon as possible.\nSource:\nhttps://www.parents.com/baby/feeding/when-can-my-baby-eat-honey/."
                 }
             ]
         },
@@ -18,15 +18,15 @@
             "topics" : [
                 {
                     "name" : "Speech",
-                    "body" : "Put speech info here."
+                    "body" : "1-3 Months: Babies coo and cry\n4-6 Months: More sounds but no clear words yet\n6-9 Months: Babies will start to imitate tones, words, and general speech\n12 Months: Words will start to appear, and by 2 years short sentences will start to arise.\n 2-3 Years: Sentences can be 4-5 words, and can use words to identify objects.\nSource:\nhttps://www.pregnancybirthbaby.org.au/speech-development-in-children"
                 },
                 {
                     "name" : "Walking & Crawling",
-                    "body" : "Put walking info here."
+                    "body" : "Babies typically begin to crawl between 6-10 months. It's not uncommon for them to skip crawling altogether however.\nIt's a good idea to give babies incentives to move around (like placing toys just out of reach).\nIf your baby hasn't shown any progress in movement by 12 months, or drags one side while crawling, consult a pediatrician.\nSource:\nhttps://www.parents.com/baby/development/crawling/when-do-babies-crawl/"
                 },
                 {
                     "name" : "Coordination",
-                    "body" : "Put coordination info here."
+                    "body" : "In the range of 3-6 months, babies will begin to grab and inspect items a lot more.\nThis increases as they age, as they subconciously develop their hand-eye coordination.\nYou can help develop these skills by letting them watch you while you perform tasks such as opening doors, clean surfaces, and eating.\nSource:\nhttps://otteroo.com/blog/baby-hand-eye-coordination/"
                 }
             ]
         },
@@ -35,15 +35,15 @@
             "topics" : [
                 {
                     "name" : "RSV",
-                    "body" : "Put RSV info here."
+                    "body" : "RSV (Respiratory Syncytial Virus) is a common, contagious virus that infects the respiratory tract of most children before their second birthday.\nMost babies/young children won't experience much more then cold, but there is a chance that it can lead to a life-treatening problem like pneumonia or bronchiolitis.\nRSV infections can cause cold-like symptoms, lasting 1-2 weeks but more serious symptoms like coughing with deeply colored mucus, dehydration, or problems with breathing can arise.\nCall your doctor if these arise, and if they are very tired, breathing rapidly, or appear blue tinted on their fingers, call 911 or go to the ER immediately.\nSource:\nhttps://www.webmd.com/lung/rsv-in-babies"
                 },
                 {
                     "name" : "Whooping Cough",
-                    "body" : "Put whooping cough info here."
+                    "body" : "Whooping Cough (Pertussis) can cause serious illness anyone, but especially in babies 1 year or younger.\nThe early symptoms of it are similar to the common cold, so only later symptoms can indicate an infection.\nSymptoms at a later point include 'fits' of rapid coughing followed by a high-pitched 'whoop' sound, vomiting after coughing 'fits' and exhaustion after coughing 'fits'\nAlmost half of young children affected require hospitalization, so see a doctor as soon as discernible symptoms arise.\nSource:\nhttps://www.cdc.gov/pertussis/about/signs-symptoms.html"
                 },
                 {
                     "name" : "Influenza",
-                    "body" : "Put influenza info here."
+                    "body" : "The flu (Influenza) just like RSV and Whooping Cough can display symptoms similar to a cold, the flu will onset much quicker then a cold however.\nAny symptoms typical of the flu for adults will be the same for children.\nIt is imperative to visit a doctor when symptoms arise, as the flu can leave a child with a weakened immune system, especially for infants 6 months or younger.\nSource:\nhttps://www.webmd.com/children/your-baby-flu-faq#1"
                 }
             ]
         },
@@ -52,15 +52,15 @@
             "topics" : [
                 {
                     "name" : "Clothes",
-                    "body" : "Put clothes info here."
+                    "body" : "Keeping your child warm is extremely important. They aren't big enough yet to keep themselves warm (or know how to put on layers for themselves for that matter)\nOnesies and jumpsuits are good for keeping them warm, as are jammies for bedtime."
                 },
                 {
                     "name" : "Toys",
-                    "body" : "Put toys info here."
+                    "body" : "The best toys are ones that stimulate all of your babies senses.\nToys that stack together are also good for developing spacial awareness skills and basic mathematical understanding."
                 },
                 {
                     "name" : "Car Seats",
-                    "body" : "Put car seat info here."
+                    "body" : "Car seats have a limited time span of useability in a infants growth, but they are necessary in that time span.\nIt's always good to do your own research, but a recommendable selection would be the 'Chicco KeyFit 30' for most babies, and the 'Britax B-Safe 35' for a taller baby.\nIn any case, make sure the baby seat you buy has high crash ratings, since that will matter most in the worst situations.\nSource:\nhttps://www.nytimes.com/wirecutter/reviews/best-infant-car-seat/"
                 }
             ]
         }
@@ -147,34 +147,34 @@
     ],
     "Tips": [
         {
-            "info" : "Here's the first neat tip"
+            "info" : "Clicking this button will randomly display a tip!"
         },
         {
-            "info" : "Here's the second neat tip"
+            "info" : "The Journal Screen lets you type stuff in!"
         },
         {
-            "info" : "Here's the third neat tip"
+            "info" : "This app doesn't require data to run!"
         },
         {
-            "info" : "Here's the fourth neat tip"
+            "info" : "Edited entries remain as such till app close"
         },
         {
-            "info" : "Here's the fifth neat tip"
+            "info" : "'Random' in this case is not a 'smart' random"
         },
         {
-            "info" : "Here's the sixth neat tip"
+            "info" : "We are not medical professionals"
         },
         {
-            "info" : "Here's the seventh neat tip"
+            "info" : "Closing a journal modal saves it's info!"
         },
         {
-            "info" : "Here's the eighth neat tip"
+            "info" : "Not an offical app, bugs may be present"
         },
         {
-            "info" : "Here's the ninth neat tip"
+            "info" : "Not sponsored"
         },
         {
-            "info" : "Here's the tenth neat tip"
+            "info" : "We hope you enjoy this app"
         }
     ]
 }
