@@ -8,7 +8,10 @@ import CategoryMenu from '../components/CategoryMenu';
 export default class CategoriesScreen extends Component {
   render(){
     return (
-      <CategoryMenu navigation={this.props.navigation}></CategoryMenu>
+      <CategoryMenu
+        navigation={this.props.navigation}
+        changeTitle={this.props.changeTitle}
+      />
     );
   }
 }

@@ -9,6 +9,13 @@ const INITIAL_ROUTE_NAME = 'Ages';
 export default class Ages extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            categoriesTitle: 'Categories'
+        }
+    }
+
+    changeCategoryTitle(title) {
+        this.setState({ categoriesTitle: title })
     }
 
     render() {
@@ -20,6 +27,7 @@ export default class Ages extends Component {
                     options={{
                         title: 'Age Groups'
                     }}
+                    changeTitle={this.changeCategoryTitle}
                 />
                 <Stack.Screen
                     name='Categories'
@@ -27,6 +35,7 @@ export default class Ages extends Component {
                     options={{
                         title: 'Categories'
                     }}
+                    changeTitle={this.changeCategoryTitle}
                 />
             </Stack.Navigator>
         )
