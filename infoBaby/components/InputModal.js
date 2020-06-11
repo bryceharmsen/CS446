@@ -14,7 +14,7 @@ export default class InputModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: null
+            text: ''
         }
     }
 

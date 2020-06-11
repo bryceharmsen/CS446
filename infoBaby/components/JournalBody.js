@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
         borderColor: '#ededed',
         marginBottom: 5,
         marginRight: 5,
-        textAlignVertical: 'center',
         borderRadius: 5
     }
 });
