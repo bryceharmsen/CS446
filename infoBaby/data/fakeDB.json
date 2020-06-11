@@ -153,25 +153,25 @@
             "info" : "The Journal Screen lets you type stuff in!"
         },
         {
-            "info" : "This app doesn't require data to run!"
+            "info" : "This app doesn't require internet to run!"
         },
         {
-            "info" : "Edited entries remain as such till app close"
+            "info" : "Edited entries remain as such until the app closes."
         },
         {
-            "info" : "'Random' in this case is not a 'smart' random"
+            "info" : "Did you know that journal entries auto-save?"
         },
         {
-            "info" : "We are not medical professionals"
+            "info" : "We are not medical professionals."
         },
         {
-            "info" : "Closing a journal modal saves it's info!"
+            "info" : "Closing a journal modal saves its info!"
         },
         {
-            "info" : "Not an offical app, bugs may be present"
+            "info" : "App data is faked!"
         },
         {
-            "info" : "Not sponsored"
+            "info" : "Buy our idea or hire us!"
         },
         {
             "info" : "We hope you enjoy this app"
