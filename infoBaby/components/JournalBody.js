@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import {
+    StyleSheet,
+    View,
+    Text
+} from 'react-native';
 import JournalMenu from '../components/JournalMenu';
 import AddJournalButton from '../components/AddJournalButton';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class JournalBody extends Component {
     
@@ -29,10 +34,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fafafa',
     },
-    contentContainer: {
-        paddingTop: 15,
-    },
     addButton: {
-        
+        position:'absolute',
+        top: '10%',
+        right: 0
     }
 });
