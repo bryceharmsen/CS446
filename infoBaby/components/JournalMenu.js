@@ -25,12 +25,6 @@ export default class JournalMenu extends Component {
     render() {
         return (
             <View>
-                <InputModal
-                    isVisible={this.state.isVisible}
-                    toggleModal={this.toggleModal}
-                    title={this.state.modalContent && this.state.modalContent.title}
-                    info={this.state.modalContent && this.state.modalContent.entry}
-                />
                 <FlatList
                     data={this.state.data}
                     keyExtractor={item => `${item.id}`}
@@ -40,6 +34,12 @@ export default class JournalMenu extends Component {
                             toggleModal={this.toggleModal}
                         />
                     }
+                />
+                <InputModal
+                    isVisible={this.state.isVisible}
+                    toggleModal={this.toggleModal}
+                    title={this.state.modalContent && this.state.modalContent.title}
+                    info={this.state.modalContent && this.state.modalContent.entry}
                 />
             </View>
         )

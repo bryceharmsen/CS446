@@ -24,7 +24,6 @@ export default class CategoryMenu extends Component {
 
 
     toggleModal = (content) => {
-        console.log(content)
         this.setState({isVisible: !this.state.isVisible})
         if (content) this.setState({modalContent: content.body, modalTitle: content.name})  
     }
