@@ -3,7 +3,6 @@ import {
     FlatList,
     View
 } from 'react-native';
-import fakeDB from '../data/fakeDB.json';
 import JournalEntry from '../components/JournalEntry';
 import InputModal from './InputModal';
 
@@ -11,13 +10,20 @@ export default class JournalMenu extends Component {
     constructor() {
         super();
         this.state = {
-            data: fakeDB.journals,
             isVisible: false,
             modalContent: null
         };
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.data !== nextProps.data || this.state.isVisible !== nextState.isVisible) {
+            return true;
+        }
+        return false;
+    }
+
     toggleModal = (content) => {
+        console.log(content)
         this.setState({ isVisible: !this.state.isVisible })
         if (content) this.setState({ modalContent: content })
     }
@@ -26,7 +32,7 @@ export default class JournalMenu extends Component {
         return (
             <View>
                 <FlatList
-                    data={this.state.data}
+                    data={this.props.data}
                     keyExtractor={item => `${item.id}`}
                     renderItem={({ item }) =>
                         <JournalEntry 

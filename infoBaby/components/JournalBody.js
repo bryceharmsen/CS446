@@ -6,27 +6,44 @@ import {
 } from 'react-native';
 import JournalMenu from '../components/JournalMenu';
 import AddJournalButton from '../components/AddJournalButton';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import fakeDB from '../data/fakeDB.json';
 
 export default class JournalBody extends Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: fakeDB.journals,
+        }
+    }
+
+    addJournal() {
+        let newJournal = this.state.data[this.state.data.length - 1];
+        let newIdx = newJournal.id + 1;
+        newJournal = {
+            id: newIdx,
+            title: 'New Journal ' + newIdx,
+            entry: ''
+        }
+        let journals = JSON.parse(JSON.stringify(this.state.data));
+        journals.push(newJournal);
+        this.setState({data: journals});
+    }
+
     render() {
         return (
         <View style={styles.container}>
-            <JournalMenu/>
+            <JournalMenu
+                data={this.state.data}
+            />
             <AddJournalButton
                 style={styles.addButton}
                 icon='pluscircle'
                 label='Add Journal'
-                onPress={() => addJournal()}
+                onPress={() => this.addJournal()}
             />
         </View>
         );
   }
-}
-
-function addJournal() {
-    console.log('adding journal...')
 }
 
 const styles = StyleSheet.create({
