@@ -35,7 +35,7 @@ export default class InputModal extends Component {
                     
                     <View style = {styles.modal}>
                         <TouchableOpacity style={styles.closeButton} onPress = {()=> this.props.toggleModal()}>
-                            <AntDesign name={'close'} size={22} color="rgba(0,0,0,1)" /> 
+                            <AntDesign name={'close'} size={36} color="rgba(0,0,0,1)" /> 
                         </TouchableOpacity>
 
                         <Text style = {styles.titleText}>{this.props.title} </Text>
@@ -56,7 +56,6 @@ export default class InputModal extends Component {
     }
 
 }
-
 
 const styles = StyleSheet.create ({
     container: {
@@ -86,7 +85,10 @@ const styles = StyleSheet.create ({
         color: '#000255',
         fontSize: 24,
         alignItems: 'flex-start',
-        marginTop: 20
+        marginTop: 12,
+        marginBottom: 12,
+        paddingRight: 40,
+        flexWrap: 'wrap'
     },
     closeButton: {
         position: 'absolute',

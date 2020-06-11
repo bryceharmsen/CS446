@@ -28,7 +28,7 @@ export default class ModalTemplate extends Component {
                             style={styles.closeButton}
                             onPress = {()=> this.props.toggleModal()}
                         >
-                            <AntDesign name={'close'} size={22} color="rgba(0,0,0,1)" /> 
+                            <AntDesign name={'close'} size={36} color="rgba(0,0,0,1)" /> 
                         </TouchableOpacity>
 
                         <Text style = {styles.titleText}>{this.props.title} </Text>
