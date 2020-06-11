@@ -26,7 +26,7 @@ export default class HomeScreen extends Component {
           </View>
 
         
-        <RandomNumber></RandomNumber>
+        <RandomNumber style={styles.proTip}></RandomNumber>
       </View>
     );
 }
@@ -85,5 +85,11 @@ const styles = StyleSheet.create({
     marginRight: 50,
     paddingLeft: 10,
     borderRadius: 30
+  },
+  proTip: {
+    flex: 1,
+    position: 'absolute',
+    bottom: 0,
+    alignSelf: 'center'
   }
 });

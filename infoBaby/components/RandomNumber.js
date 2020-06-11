@@ -28,7 +28,7 @@ export default class RandomNumber extends Component{
     render() {
 
         return (
-            <View style ={styles.MainContainer}>
+            <View style ={this.props.style}>
                 <Text style={styles.text}>{this.state.data[this.state.currentID].info}</Text>
                 <Button title="Pro tip" onPress={this.generateRandomNumber} />
             </View>
@@ -37,9 +37,6 @@ export default class RandomNumber extends Component{
 }
 
 const styles = StyleSheet.create({
-    MainContainer: {
-        flex: 1,
-    },
     text: {
         fontSize: 20,
         textAlign: 'center'

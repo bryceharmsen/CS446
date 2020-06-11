@@ -13,13 +13,13 @@ export default class AddJournalButton extends Component {
     }
     render() {
         return (
-        <RectButton style={styles.button} onPress={this.props.onPress}>
+        <RectButton style={this.props.style} onPress={this.props.onPress}>
             <View style={{ flexDirection: 'row' }}>
-            <View style={styles.buttonIconContainer}>
+            <View style={styles.iconContainer}>
                 <AntDesign name={this.props.icon} size={22} color="rgba(0,0,0,1)" />
             </View>
-            <View style={styles.buttonTextContainer}>
-                <Text style={styles.buttonText}>{this.props.label}</Text>
+            <View style={styles.textContainer}>
+                <Text style={styles.text}>{this.props.label}</Text>
             </View>
             </View>
         </RectButton>
@@ -28,24 +28,16 @@ export default class AddJournalButton extends Component {
 }
 
 const styles = StyleSheet.create({
-    buttonIconContainer: {
-        marginRight: 12,
+    iconContainer: {
+        marginRight: 12
     },
-    buttonTextContainer: {
-        height: 12
-    },
-    button: {
-        backgroundColor: 'grey',
-        paddingHorizontal: 15,
-        paddingVertical: 15,
-        marginTop: 1,
-        marginBottom: 1,
-        borderColor: '#ededed',
+    textContainer: {
+        height: 20
     },
     text: {
         fontSize: 15,
         color: 'white',
-        alignSelf: 'flex-start',
+        alignSelf: 'center',
         marginTop: 1,
     }
 });

@@ -34,9 +34,25 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fafafa',
     },
+    button: {
+        backgroundColor: 'grey',
+        paddingHorizontal: 15,
+        paddingVertical: 15,
+        marginTop: 1,
+        marginBottom: 1,
+        borderColor: '#ededed',
+    },
     addButton: {
         position:'absolute',
-        top: '10%',
-        right: 0
+        bottom: 0,
+        right: 0,
+        backgroundColor: '#aaaaaa',
+        paddingHorizontal: 15,
+        paddingVertical: 15,
+        borderColor: '#ededed',
+        marginBottom: 5,
+        marginRight: 5,
+        textAlignVertical: 'center',
+        borderRadius: 5
     }
 });
