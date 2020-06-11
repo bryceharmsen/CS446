@@ -4,8 +4,7 @@ import {
     StyleSheet, 
     View, 
     Text
-} from 'react-native'
-
+} from 'react-native';
 
 export default class JournalEntry extends Component {
     constructor() {
