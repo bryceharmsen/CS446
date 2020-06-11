@@ -13,16 +13,12 @@ export default class JournalEntry extends Component {
 
     }
 
-    onPress = data => {
-        console.log("Journal Pressed", data);
-    }
-
     render() {
         return (
            <View style = {styles.container}>
-              <TouchableOpacity style={styles.journalItem} activeOpacity={0.6} onPress={() => this.props.toggleModal(this.props.data)}>
+              <TouchableOpacity style={styles.journalItem} activeOpacity={0.6} onPress={() => this.props.toggleModal(this.props.journal)}>
                  <Text style = {styles.journalText}>
-                    {this.props.data.title}
+                    {this.props.journal.title}
                  </Text>
               </TouchableOpacity>
            </View>

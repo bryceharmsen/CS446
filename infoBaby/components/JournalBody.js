@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
-    View,
-    Text
+    View
 } from 'react-native';
 import JournalMenu from '../components/JournalMenu';
 import AddJournalButton from '../components/AddJournalButton';
@@ -12,28 +11,28 @@ export default class JournalBody extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: fakeDB.journals,
+            journals: fakeDB.journals
         }
     }
 
     addJournal() {
-        let newJournal = this.state.data[this.state.data.length - 1];
+        let newJournal = this.state.journals[this.state.journals.length - 1];
         let newIdx = newJournal.id + 1;
         newJournal = {
             id: newIdx,
             title: 'New Journal ' + newIdx,
             entry: ''
         }
-        let journals = JSON.parse(JSON.stringify(this.state.data));
+        let journals = JSON.parse(JSON.stringify(this.state.journals));
         journals.push(newJournal);
-        this.setState({data: journals});
+        this.setState({journals: journals});
     }
 
     render() {
         return (
         <View style={styles.container}>
             <JournalMenu
-                data={this.state.data}
+                journals={this.state.journals}
             />
             <AddJournalButton
                 style={styles.addButton}
@@ -43,7 +42,7 @@ export default class JournalBody extends Component {
             />
         </View>
         );
-  }
+    }
 }
 
 const styles = StyleSheet.create({

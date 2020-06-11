@@ -16,14 +16,14 @@ export default class JournalMenu extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.props.data !== nextProps.data || this.state.isVisible !== nextState.isVisible) {
+        if (this.props.journals !== nextProps.journals
+            || this.state.isVisible !== nextState.isVisible) {
             return true;
         }
         return false;
     }
 
     toggleModal = (content) => {
-        console.log(content)
         this.setState({ isVisible: !this.state.isVisible })
         if (content) this.setState({ modalContent: content })
     }
@@ -32,11 +32,11 @@ export default class JournalMenu extends Component {
         return (
             <View>
                 <FlatList
-                    data={this.props.data}
+                    data={this.props.journals}
                     keyExtractor={item => `${item.id}`}
                     renderItem={({ item }) =>
                         <JournalEntry 
-                            data={item}
+                            journal={item}
                             toggleModal={this.toggleModal}
                         />
                     }
