@@ -31,11 +31,12 @@ const styles = StyleSheet.create ({
         flex: 1
     },
     journalItem: {
-        paddingVertical: 20,
+        paddingVertical: 18,
         paddingHorizontal: 30,
         height: 60,
         marginBottom: 0.5,
         backgroundColor: 'lightgreen'
+
     },
     journalText: {
         fontSize: 18
