@@ -34,6 +34,7 @@ export default class InputModal extends Component {
                 >
                     
                     <View style = {styles.modal}>
+                        <Text style={styles.autoSave}>Journal is auto-saved</Text>
                         <TouchableOpacity style={styles.closeButton} onPress = {()=> this.props.toggleModal()}>
                             <AntDesign name={'close'} size={36} color="rgba(0,0,0,1)" /> 
                         </TouchableOpacity>
@@ -95,5 +96,12 @@ const styles = StyleSheet.create ({
         position: 'absolute',
         top: '3%',
         right: '3%'
+    },
+    autoSave: {
+        position: 'absolute',
+        top:'0.5%',
+        right:'3%',
+        fontSize: 11,
+        color: 'gray'
     }
 })
