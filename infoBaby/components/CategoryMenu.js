@@ -24,7 +24,6 @@ export default class CategoryMenu extends Component {
         };
     }
 
-
     toggleModal = (content) => {
         this.setState({isVisible: !this.state.isVisible})
         if (content) this.setState({modalContent: content.body, modalTitle: content.name})  
@@ -47,12 +46,6 @@ export default class CategoryMenu extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity 
-                    style={styles.header}
-                    onPress={() => this.props.navigation.navigate('Ages')}
-                >
-                    <Text style={styles.headerText}><AntDesign name={'left'} size={styles.headerText.fontSize} rgba={'(0,0,0,1)'}/> Ages</Text>
-                </TouchableOpacity>
                 <FlatList 
                     data={this.state.data}
                     keyExtractor={item => item.name}
@@ -84,12 +77,5 @@ export default class CategoryMenu extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1
-    },
-    header: {
-        height: 50,
-        padding: 10
-    },
-    headerText: {
-        fontSize: 16
     }
 });

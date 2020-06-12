@@ -15,7 +15,6 @@ export default class Ages extends Component {
         return (
             <Stack.Navigator
                 initialRouteName={INITIAL_ROUTE_NAME}
-                headerMode={false}
             >
                 <Stack.Screen
                     name='Ages'
