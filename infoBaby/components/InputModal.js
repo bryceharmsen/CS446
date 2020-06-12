@@ -30,7 +30,7 @@ export default class InputModal extends Component {
                     visible = {this.props.isVisible}
                     onBackdropPress = {() => this.props.toggleModal()}
                     onRequestClose = {() => this.props.toggleModal()}
-                    onShow = {() => { this.textInput.focus(); }}
+                    onShow = {() => { if (this.state.text == '') this.textInput.focus(); }}
                 >
                     
                     <View style = {styles.modal}>
