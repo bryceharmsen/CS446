@@ -30,7 +30,7 @@ export default class RandomNumber extends Component{
         return (
             <View style ={this.props.style}>
                 <Text style={styles.text}>{this.state.data[this.state.currentID].info}</Text>
-                <Button title="Pro tip" onPress={this.generateRandomNumber} />
+                <Button style={styles.button} title="Pro tip" onPress={this.generateRandomNumber} />
             </View>
         );
     }
@@ -40,5 +40,9 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         textAlign: 'center'
-    } 
+    },
+    button: {
+        width: '100%',
+        borderWidth: 1
+    }
 });

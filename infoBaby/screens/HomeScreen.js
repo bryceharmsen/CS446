@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'absolute',
     bottom: 0,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    width: '100%'
   }
 });
