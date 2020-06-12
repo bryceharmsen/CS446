@@ -23,7 +23,6 @@ export default class AgeMenu extends Component {
                     <AgeButton
                         name={item}
                         navigation={this.props.navigation}
-                        changeTitle={this.props.changeTitle}
                     />
                 }
             />

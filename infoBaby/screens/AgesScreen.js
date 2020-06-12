@@ -9,10 +9,10 @@ import AgeMenu from "../components/AgeMenu"
 export default class AgesScreen extends Component {
 
   render() {
+    console.log(this.props)
     return(
       <AgeMenu
         navigation={this.props.navigation}
-        changeTitle={this.props.changeTitle}
       />
     )
   }
