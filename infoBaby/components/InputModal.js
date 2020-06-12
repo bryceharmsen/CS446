@@ -94,12 +94,12 @@ const styles = StyleSheet.create ({
     },
     closeButton: {
         position: 'absolute',
-        top: '3%',
+        top: 10,
         right: '3%'
     },
     autoSave: {
         position: 'absolute',
-        top:'0.5%',
+        top:2,
         right:'3%',
         fontSize: 11,
         color: 'gray'
